@@ -15,11 +15,11 @@ libstatic:
 
 build: src/main.cpp 
 	@echo ------------- Building -------------
-	$(CC) -o build/main.o -I../include/ -c src/main.cpp
+	$(CC) -o build/main.o -Iinclude/ -c src/main.cpp
 	@echo ------------- Linking  -------------
 	$(CC) -o bin/main -Llib/ build/main.o $(LIBINCL)
 	@echo ------------- Run ------------------
-	valgrind --leak-check=full ./bin/main
+	@#valgrind --leak-check=full ./bin/main
 
 $(LIBOBJ): $(LIBSRC)	
 	@echo ------------- Building -------------
